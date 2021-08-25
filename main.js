@@ -11,7 +11,7 @@ function CreateWindow() {
       nodeIntegration: true
     }
   })
-  window.loadFile("home.html")
+  window.loadFile("./gui/home.html")
 }
 
 app.whenReady().then(CreateWindow)

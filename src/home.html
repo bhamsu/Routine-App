@@ -1,0 +1,39 @@
+
+<html>
+  <head>
+    <title>Routine App</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="linkers/appFunctions.js"></script>
+  </head>
+  <body>
+    <div class ="mainApp">
+      <div class ="topBar">
+        <div class ="titleBar">
+          <button id="showHideMenus" class="toogleButton"></button>
+          <img src="icons/top_bar.png" alt="">
+          <div class ="tittle">
+            Routine App
+          </div>
+        </div>
+        <div class ="topBarBtns">
+          <button id="minimizeBtn" class="topBtn minimizeBtn" title="Minimize"></button>
+          <button id="maxResBtn" class="topBtn maximizeBtn" title="Maximize"></button>
+          <button id="closeBtn" class="topBtn closeBtn" title="Close"></button>
+        </div>
+      </div>
+      <div class="box">
+        <span id="demo">-</span>
+      </div>
+      <script>
+          // In renderer process (web page).
+          const { ipcRenderer } = require('electron')
+
+          ipcRenderer.on('asynchronous-reply', (event, arg) => {
+            document.getElementById('demo').innerHTML = arg
+            // console.log(arg)
+          })
+          ipcRenderer.send('asynchronous-message', 'ping')
+      </script>
+    </div>
+  </body>
+</html>

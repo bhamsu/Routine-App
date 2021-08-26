@@ -9,6 +9,7 @@
   "author": "Team 45",
   "license": "ISC",
   "dependencies": {
+    "child_process": "^1.0.2",
     "electron": "^13.2.2",
     "python-shell": "^3.0.0"
   }

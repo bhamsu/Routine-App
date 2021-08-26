@@ -1,0 +1,4 @@
+pip install pycryptodome
+pip install base64
+npm install electron
+npm install python-shell
